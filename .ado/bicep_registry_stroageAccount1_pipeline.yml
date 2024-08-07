@@ -3,7 +3,7 @@ resources:
   - repository: templates
     type: github
     name: JFolberth/TheYAMLPipelineOne
-    ref: features/bicepparam
+    ref: feature/bicepparam
     endpoint: JFolberth
 trigger:
 - main
