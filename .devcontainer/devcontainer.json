@@ -15,7 +15,8 @@
                 "ms-azuretools.vscode-bicep",
                 "ms-azuretools.vscode-docker",
                 "yzhang.markdown-all-in-one",
-                "oderwat.indent-rainbow"
+                "oderwat.indent-rainbow",
+                "github.copilot"
             ]
         }
     }

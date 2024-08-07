@@ -1,0 +1,30 @@
+parameters:
+- name: environmentObjects
+  type: object
+  default:
+    - environmentName: 'dev'
+      regionAbrvs: ['eus']
+- name: templateFileName
+  type: string
+  default: 'main'
+- name: templateDirectory
+  type: string 
+  default: 'infrastructure'
+- name: serviceName
+  type: string
+  default: 'storageAccount1'
+
+stages:
+- template: stages/bicep_build_stage.yml@templates
+  parameters:
+    environmentObjects: ${{ parameters.environmentObjects }}
+    templateFileName: ${{ parameters.templateFileName }}
+    serviceName: ${{ parameters.serviceName }}
+    templateDirectory: ${{ parameters.templateDirectory }}
+    
+- ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main')}}:
+  - template: stages/bicep_deploy_stage.yml@templates
+    parameters:
+      environmentObjects: ${{ parameters.environmentObjects }}
+      templateFileName: ${{ parameters.templateFileName }}
+      serviceName: ${{ parameters.serviceName }}
