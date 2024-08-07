@@ -23,7 +23,7 @@ stages:
     templateFileName: ${{ parameters.templateFileName }}
     serviceName: ${{ parameters.serviceName }}
     templateDirectory: ${{ parameters.templateDirectory }}
-    paramExt: ${{ paraemters.paramExt }}
+    paramExt: ${{ parameters.paramExt }}
     
 - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main')}}:
   - template: stages/bicep_deploy_stage.yml@templates
@@ -31,4 +31,4 @@ stages:
       environmentObjects: ${{ parameters.environmentObjects }}
       templateFileName: ${{ parameters.templateFileName }}
       serviceName: ${{ parameters.serviceName }}
-      paramExt: ${{ paraemters.paramExt }}
+      paramExt: ${{ parameters.paramExt }}
