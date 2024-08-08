@@ -15,7 +15,7 @@ parameters:
   default: 'storageAccount1'
 - name: paramExt
   type: string
-  default: 'bicepparm'
+  default: 'bicepparam'
 stages:
 - template: stages/bicep_build_stage.yml@templates
   parameters:
