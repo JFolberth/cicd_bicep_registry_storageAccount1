@@ -13,7 +13,7 @@ parameters:
 - name: serviceName
   type: string
   default: 'storageAccount1'
-- name: paramExt
+- name: bicepParamExt
   type: boolean
   default: true
 stages:
@@ -23,7 +23,7 @@ stages:
     templateFileName: ${{ parameters.templateFileName }}
     serviceName: ${{ parameters.serviceName }}
     templateDirectory: ${{ parameters.templateDirectory }}
-    paramExt: ${{ parameters.paramExt }}
+    bicepParamExt: ${{ parameters.bicepParamExt }}
     
 - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main')}}:
   - template: stages/bicep_deploy_stage.yml@templates
@@ -32,4 +32,4 @@ stages:
       templateFileName: ${{ parameters.templateFileName }}
       serviceName: ${{ parameters.serviceName }}
       templateDirectory: ${{ parameters.templateDirectory }}
-      paramExt: ${{ parameters.paramExt }}
+      bicepParamExt: ${{ parameters.bicepParamExt }}
