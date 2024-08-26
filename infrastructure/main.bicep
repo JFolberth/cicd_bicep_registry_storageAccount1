@@ -22,7 +22,7 @@ resource resourceGroup 'Microsoft.Resources/resourceGroups@2024-03-01' ={
   tags: tags
 }
 
-module storageAccount 'br:acrbicepregistrydeveus.azurecr.io/bicep/modules/storageaccount:v1' = {
+module storageAccount 'br:acrbicepregistry.azurecr.io/module/storage:v1' = {
   name: 'storageAccount1Module'
   scope: resourceGroup
   params: {

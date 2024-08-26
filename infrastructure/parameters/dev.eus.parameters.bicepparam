@@ -1,3 +1,3 @@
 using '../main.bicep'
 param location = 'eastus'
-param environmentName = 'dev2'
+param environmentName = 'dev'
