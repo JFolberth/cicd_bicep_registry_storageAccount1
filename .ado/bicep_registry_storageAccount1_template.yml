@@ -4,6 +4,8 @@ parameters:
   default:
     - environmentName: 'dev'
       regionAbrvs: ['eus']
+    - environmentName: 'tst'
+      regionAbrvs: ['eus']
 - name: templateFileName
   type: string
   default: 'main'
