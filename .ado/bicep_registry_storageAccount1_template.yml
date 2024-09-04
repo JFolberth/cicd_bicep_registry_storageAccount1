@@ -26,6 +26,7 @@ stages:
     serviceName: ${{ parameters.serviceName }}
     templateDirectory: ${{ parameters.templateDirectory }}
     bicepParamExt: ${{ parameters.bicepParamExt }}
+    deploymentStack: true
     
 - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main')}}:
   - template: stages/bicep_deploy_stage.yml@templates
