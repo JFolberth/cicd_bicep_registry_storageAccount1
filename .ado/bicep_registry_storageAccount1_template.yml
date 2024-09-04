@@ -4,8 +4,10 @@ parameters:
   default:
     - environmentName: 'dev'
       regionAbrvs: ['eus']
+      deploymentStack: true
     - environmentName: 'tst'
       regionAbrvs: ['eus']
+      deploymentStack: true
 - name: templateFileName
   type: string
   default: 'main'
@@ -26,7 +28,6 @@ stages:
     serviceName: ${{ parameters.serviceName }}
     templateDirectory: ${{ parameters.templateDirectory }}
     bicepParamExt: ${{ parameters.bicepParamExt }}
-    deploymentStack: true
     
 - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/main')}}:
   - template: stages/bicep_deploy_stage.yml@templates
