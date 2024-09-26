@@ -1,6 +1,7 @@
 using '../main.bicep'
 param location = 'eastus'
 param environmentName = 'dev'
+param storageAccountType = 'Standard_ZRS'
 param diagnosticSettings = [
   {
     name: 'diagnosticSettings'

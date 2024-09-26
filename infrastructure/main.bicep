@@ -9,6 +9,7 @@ param diagnosticSettings diagnosticSettingType
 @description('Key Value Pair for tags.')
 param tags object = {}
 targetScope = 'subscription'
+param storageAccountType string
 
 var regionReference = {
   centralus: 'cus'
@@ -31,6 +32,8 @@ module storageAccount 'br:acrbicepregistry.azurecr.io/module/storage:v1' = {
     location: location
     storageAccountName: shortsuffix
     diagnosticSettings: diagnosticSettings
+    storageAccountType: storageAccountType
+
   }
 
 }
